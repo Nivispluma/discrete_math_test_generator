@@ -5,7 +5,7 @@ import time
 import number_generator
 import progressbar
 
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 import csv
 
@@ -103,13 +103,12 @@ def PollardRho(n):
 #
 
 def rsa_factoring(total_iterations):
-    base_size = 10
+    base_size = 30
     divisor = 0
 
     for i in range(total_iterations):
         divisor_equal = False
-
-        file = open("results.csv","a")
+        file = open("data_analysis/results.csv", "a")
         p = generate_prime(base_size)
         q = generate_prime(base_size)
         n = p * q
@@ -131,7 +130,7 @@ def rsa_factoring(total_iterations):
         file.write(f"{n};{p};{q};{divisor};{end_time};{divisor_equal};{base_size}\n")
         file.close()
 
-        base_size = random.randint(10, 30)
+        base_size = random.randint(35, 40)
 
     return
 
@@ -146,8 +145,8 @@ def rsa_factoring(total_iterations):
 if __name__ == '__main__':
     # print_hi('PyCharm')
 
-    loops = 10000000
-    selection = 2
+    loops = 20
+    selection = 1
 
     if selection == 1:
         rsa_factoring(loops)
