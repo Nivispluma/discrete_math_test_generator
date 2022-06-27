@@ -130,7 +130,7 @@ def rsa_factoring(total_iterations):
         file.write(f"{n};{p};{q};{divisor};{end_time};{divisor_equal};{base_size}\n")
         file.close()
 
-        base_size = random.randint(35, 40)
+        base_size = random.randint(39, 40)
 
     return
 
